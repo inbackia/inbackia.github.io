@@ -1,0 +1,223 @@
+$sub_primary : #31e6ff;
+$primary : #FF008A;
+
+*{
+    box-sizing: border-box;
+    position: relative;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $sub_primary;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Bebas Neue', cursive;
+    color: $primary;
+    font-size : 2.8rem;
+    margin : 0;
+    text-align: center;
+}
+
+.background {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    padding: 0 1rem;
+
+    span {
+        display: block;
+        width: calc(100% / 9 - 2.7vw);
+        height: 100%;
+        background : linear-gradient(180deg, #17FF2F 0%, rgba(217, 217, 217, 0.00) 100%, rgba(217, 217, 217, 0.00) 100%);;
+        margin-right: 2.7vw;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+        position: absolute;
+        bottom: 1.5rem;
+    }
+
+}
+
+.logo-holder {
+    display: flex;
+    justify-content: center;
+
+    img {
+    width: calc((100vw - 2rem) / 12 * 7);
+    }
+}
+
+.heart-holder {
+    margin: 3.2rem 0;
+}
+
+.contents {
+    p {
+        font-size: 1.7rem;
+        line-height: 1.7em;
+        margin-bottom: 0;
+        span {
+            font-family:'Bebas Neue', Cursive;
+            
+        }
+    }
+    padding: 0 1rem;
+    margin: 10vh auto;
+    max-width: 980px;
+}
+
+table{
+    background-color: white;
+    border-top: 2px  solid #FF008A;
+    border-bottom: 2px  solid #FF008A;
+    width: 100%;
+    border-collapse:collapse;
+    padding : 0 1rem;
+
+    tr, td, th {
+        border: 1px solid #e2e2e2;
+        border-left: none;
+        border-right: none;
+    }
+    td, th {
+        padding: 0.2rem 0 0.3rem;
+    } 
+    td:nth-child(2){
+        font-weight: 1000;
+    }
+}
+
+.anchor-holder {
+    a{
+        display: block;
+        text-align: center;
+        font-size: 1.7rem;
+    }
+}
+
+
+.door-line {
+    width: 20px;
+    height: 100vw;
+    position: fixed;
+    z-index: 100;
+
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $sub_primary;
+    mix-blend-mode: difference;
+
+    animation-name:rotate;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    // Iterative : 반복적인
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.static-door-line {
+    display: none;
+    width: calc(100vw - 1.875rem * 2);
+    height: 4px;
+    background: black;
+    transform: rotate(30deg);
+    margin: 30vh auto;
+    display: none;
+    
+
+}
+
+@keyframes rotate{
+    from {
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+
+    // 0%{
+
+    // }
+    // 100%{
+
+    // }
+}
+
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width:1024px)  {
+    .contents p{
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width:768px)  {
+    .background {
+        padding: 0;
+        span{
+            width: 25%;
+            margin: 0;
+            &:nth-child(n+4){
+                display: none;
+            }
+        }
+    }
+    
+    .logo-holder{
+        width:100%;
+        padding: 1rem;
+        img{
+            width: 100%;
+        }
+    }
+    .door-line{
+        display: none;
+    }
+
+    .static-door-line{
+        display: block;
+    }
+}
+
+@media screen and (max-width:480px)  {
+    .contents p{
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width:350px)  {
+    .contents p{
+        font-size: 1.1rem;
+    }
+}
+
+
+
+
+
+
